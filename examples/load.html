@@ -1,0 +1,33 @@
+<html>
+<head>
+<script type="text/javascript" src="../javascripts/Uffy.js"></script>
+</head>
+<body>
+<div id="container">
+</div>
+<h3>uniq images</h3>
+<div id="container-uniq" style="padding:3px;background-color:#CCC">
+</div>
+</body>
+</html>
+<script type="text/javascript">
+var uffy = new Uffy('../swf/Anigif2png.swf');
+uffy.load('Anigif2png', function(Anigif2png) {
+    var anigif2png = new Anigif2png;
+    if (console) console.log(Anigif2png.help);
+
+    anigif2png.load('./kyoryu.gif', function(data) {
+      var container = document.getElementById('container');
+      var img = document.createElement('img');
+      img.src = data;
+      container.appendChild(img);
+    }, null, false);
+
+    anigif2png.load('./kyoryu.gif', function(data) {
+      var container = document.getElementById('container-uniq');
+      var img = document.createElement('img');
+      img.src = data;
+      container.appendChild(img);
+    }, null, true);
+});
+</script>
