@@ -14,7 +14,7 @@
 var uffy = new Uffy('../swf/Anigif2png.swf');
 uffy.load('Anigif2png', function(Anigif2png) {
     var anigif2png = new Anigif2png;
-    if (console) console.log(Anigif2png.help);
+    if (window.console) window.console.log(Anigif2png.help);
 
     anigif2png.load('./kyoryu.gif', function(data) {
       var container = document.getElementById('container');
